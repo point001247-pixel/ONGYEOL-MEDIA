@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/broadsheet-7a4e0e12-8a78-4465-b181-2593fb5aa85e/styles.css">
+<script src="_ds/broadsheet-7a4e0e12-8a78-4465-b181-2593fb5aa85e/_ds_bundle.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&display=swap">
+<style>
+body{margin:0;background:var(--color-bg);color:var(--color-text);font-family:"Source Serif 4","Noto Serif KR",serif;word-break:keep-all;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:"Source Serif 4","Noto Serif KR",serif}
+a{color:var(--color-accent-700);text-decoration:none}a:hover{color:var(--color-accent)}
+button,input,textarea,select{font-family:inherit}
+</style>
+</helmet>
+
+<div style="min-height:100vh;display:flex;flex-direction:column">
+
+<sc-if value="{{ isEdition }}" hint-placeholder-val="{{ true }}">
+<header style="max-width:1200px;width:100%;margin:0 auto;padding:var(--space-6) var(--space-6) 0;box-sizing:border-box;display:flex;flex-direction:column;gap:var(--space-3)">
+  <div style="border-top:4px solid var(--color-text);border-bottom:1px solid var(--color-text);padding:var(--space-2) 0;display:flex;justify-content:space-between;gap:var(--space-4);flex-wrap:wrap;font-size:13px">
+    <span>2026년 10월 28일 수요일</span>
+    <span style="font-style:italic">콘텐츠를 만들고, 브랜드의 성장을 연결합니다</span>
+    <span>GEO · 블로그 · 영상</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:var(--space-6);flex-wrap:wrap;padding:var(--space-4) 0 var(--space-2)">
+    <button onClick="{{ goHome }}" style="background:none;border:0;padding:0;cursor:pointer;text-align:left;color:var(--color-text);display:flex;align-items:center;gap:var(--space-4)">
+      <img src="assets/logo-mark.png" alt="온결미디어 로고" style="height:clamp(48px,6.4vw,80px);width:auto;mix-blend-mode:multiply"></img>
+      <span style="font-size:clamp(44px,7vw,88px);font-weight:700;letter-spacing:-0.03em;line-height:1">온결미디어</span>
+    </button>
+    <nav style="display:flex;gap:var(--space-2);flex-wrap:wrap;align-items:center">
+      <sc-for list="{{ navItems }}" as="n" hint-placeholder-count="4">
+        <button onClick="{{ n.go }}" style="{{ n.style }}">{{ n.label }}</button>
+      </sc-for>
+      <button class="btn btn-primary" onClick="{{ goContact }}" style="padding:10px 18px;font-size:15px;margin-left:var(--space-2)">무료 상담 신청</button>
+    </nav>
+  </div>
+</header>
+</sc-if>
+
+<sc-if value="{{ isQuiet }}" hint-placeholder-val="{{ false }}">
+<header style="position:sticky;top:0;z-index:10;background:var(--color-bg)">
+  <div style="max-width:1200px;margin:0 auto;padding:var(--space-4) var(--space-6);display:flex;align-items:center;gap:var(--space-6);flex-wrap:wrap">
+    <button onClick="{{ goHome }}" style="background:none;border:0;padding:0;cursor:pointer;color:var(--color-text);display:flex;align-items:center;gap:var(--space-2);margin-right:auto">
+      <img src="assets/logo-mark.png" alt="온결미디어 로고" style="height:36px;width:auto;mix-blend-mode:multiply"></img>
+      <span style="font-size:22px;font-weight:700;letter-spacing:-0.02em">온결미디어</span>
+    </button>
+    <nav style="display:flex;gap:var(--space-2);flex-wrap:wrap">
+      <sc-for list="{{ navItems }}" as="n" hint-placeholder-count="4">
+        <button onClick="{{ n.go }}" style="{{ n.style }}">{{ n.label }}</button>
+      </sc-for>
+    </nav>
+    <button class="btn btn-primary" onClick="{{ goContact }}" style="padding:10px 18px;font-size:15px">무료 상담 신청</button>
+  </div>
+</header>
+</sc-if>
+
+<main style="flex:1">
+
+<sc-if value="{{ pageHome }}" hint-placeholder-val="{{ true }}">
+  <sc-if value="{{ isEdition }}" hint-placeholder-val="{{ true }}">
+  <section style="max-width:1200px;margin:0 auto;padding:var(--space-8) var(--space-6) 96px;display:flex;flex-wrap:wrap;gap:56px">
+    <div style="flex:2 1 440px;display:flex;flex-direction:column;gap:var(--space-6);min-width:0">
+      <span style="font-size:14px;color:var(--color-accent-2-700);font-weight:600">오늘의 주제 — SEO에서 GEO로</span>
+      <h1 style="margin:0;font-size:clamp(36px,5vw,64px);line-height:1.2;letter-spacing:-0.03em;text-wrap:pretty">이제 환자와 의뢰인은 AI에게 먼저 묻습니다</h1>
+      <p style="margin:0;font-size:20px;line-height:1.7;font-style:italic;color:var(--color-neutral-800);max-width:640px">온결미디어는 기관이 가진 양질의 정보를 고객과 생성형 AI가 쉽게 찾고 이해할 수 있도록 설계하는, 신뢰 기반의 마케팅 파트너입니다.</p>
+      <div style="column-width:280px;column-gap:var(--space-8);font-size:17px;line-height:1.85;color:var(--color-neutral-900)">
+        <p style="margin:0 0 var(--space-4)">키워드를 반복하고 광고 입찰을 올리는 방식은 한계에 다다랐습니다. ChatGPT, Gemini, 네이버 AI는 맥락 없는 포스팅보다 정확하고 일관된 공식 정보를 인용합니다.</p>
+        <p style="margin:0">온결은 FAQ를 구조화하고 공식 정보의 일관성을 점검하며, 사실에 근거한 답변 콘텐츠를 쌓아 AI 검색 시대의 신뢰를 만듭니다.</p>
+      </div>
+      <div style="display:flex;gap:var(--space-3);flex-wrap:wrap;padding-top:var(--space-2)">
+        <button class="btn btn-primary" onClick="{{ goContact }}" style="padding:14px 24px;font-size:16px">무료 상담 신청</button>
+        <button class="btn btn-secondary" onClick="{{ goServices }}" style="padding:14px 24px;font-size:16px">서비스 보기</button>
+      </div>
+    </div>
+    <aside style="flex:1 1 280px;display:flex;flex-direction:column;gap:var(--space-6);min-width:0">
+      <img src="assets/profile.png" alt="김형준 실장" style="width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 20%;border-radius:var(--radius-md);display:block"></img>
+      <span style="font-size:14px;font-style:italic;color:var(--color-neutral-700)">김형준 실장 · 유튜브 크리에이터 · 네이버 블로거</span>
+    </aside>
+  </section>
+  </sc-if>
+
+  <sc-if value="{{ isQuiet }}" hint-placeholder-val="{{ false }}">
+  <section style="max-width:1200px;margin:0 auto;padding:128px var(--space-6) 128px;display:flex;flex-direction:column;gap:var(--space-8)">
+    <span style="font-size:15px;color:var(--color-accent-700)">GEO 마케팅 · 공식 블로그 운영 · 영상 기획</span>
+    <h1 style="margin:0;font-size:clamp(40px,6.4vw,84px);line-height:1.16;letter-spacing:-0.035em;max-width:960px;text-wrap:pretty">콘텐츠를 만들고,<br>브랜드의 성장을 연결합니다.</h1>
+    <p style="margin:0;font-size:20px;line-height:1.75;color:var(--color-neutral-800);max-width:620px">기관이 가진 전문 정보가 고객과 생성형 AI에게 올바르게 인용되도록. 온결미디어는 콘텐츠와 AI 검색을 연결하는 마케팅 파트너입니다.</p>
+    <div style="display:flex;gap:var(--space-3);flex-wrap:wrap">
+      <button class="btn btn-primary" onClick="{{ goContact }}" style="padding:14px 24px;font-size:16px">무료 상담 신청</button>
+      <button class="btn btn-ghost" onClick="{{ goServices }}" style="padding:14px 16px;font-size:16px">서비스 보기 →</button>
+    </div>
+  </section>
+  </sc-if>
+
+  <section style="max-width:1200px;margin:0 auto;padding:var(--space-8) var(--space-6) 112px;display:flex;flex-direction:column;gap:56px">
+    <div style="display:flex;flex-direction:column;gap:var(--space-3);max-width:760px">
+      <span style="font-size:14px;color:var(--color-accent-700)">검색의 전환</span>
+      <h2 style="margin:0;font-size:clamp(28px,3.4vw,44px);line-height:1.3;letter-spacing:-0.02em">키워드 순위 경쟁에서, AI가 인용하는 신뢰의 경쟁으로.</h2>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:56px">
+      <div style="flex:1 1 300px;display:flex;flex-direction:column;gap:var(--space-3);min-width:0">
+        <span style="font-size:clamp(40px,5vw,64px);font-weight:700;color:var(--color-neutral-500);letter-spacing:-0.02em;line-height:1">SEO</span>
+        <p style="margin:0;font-size:17px;line-height:1.8;color:var(--color-neutral-800)">키워드 단순 반복, 과열된 광고 입찰, 맥락 없는 포스팅. 노출은 늘어도 신뢰는 떨어지고 이탈은 높아집니다.</p>
+      </div>
+      <div style="flex:1 1 300px;display:flex;flex-direction:column;gap:var(--space-3);min-width:0">
+        <span style="font-size:clamp(40px,5vw,64px);font-weight:700;color:var(--color-accent-700);letter-spacing:-0.02em;line-height:1">GEO</span>
+        <p style="margin:0;font-size:17px;line-height:1.8">생성형 AI 최적화. AI가 명확하게 참조할 수 있도록 FAQ를 구조화하고, 공식 데이터의 일관성을 점검하고, 사실 기반 답변 콘텐츠를 구축합니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="max-width:1200px;margin:0 auto;padding:0 var(--space-6) 112px;display:flex;flex-direction:column;gap:56px">
+    <div style="display:flex;flex-direction:column;gap:var(--space-3);max-width:720px">
+      <span style="font-size:14px;color:var(--color-accent-700)">일하는 방식</span>
+      <h2 style="margin:0;font-size:clamp(28px,3.4vw,44px);line-height:1.3;letter-spacing:-0.02em">진단하고, 제작하고, 관리합니다.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:56px var(--space-8)">
+      <sc-for list="{{ method }}" as="m" hint-placeholder-count="3">
+        <div style="display:flex;flex-direction:column;gap:var(--space-3)">
+          <span style="font-size:15px;font-style:italic;color:var(--color-accent-2-700)">{{ m.en }}</span>
+          <h3 style="margin:0;font-size:26px;line-height:1.35">{{ m.title }}</h3>
+          <p style="margin:0;font-size:17px;line-height:1.8;color:var(--color-neutral-800)">{{ m.desc }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="max-width:1200px;margin:0 auto;padding:0 var(--space-6) 112px;display:flex;flex-direction:column;gap:56px">
+    <div style="display:flex;flex-direction:column;gap:var(--space-3);max-width:720px">
+      <span style="font-size:14px;color:var(--color-accent-700)">분야별 솔루션</span>
+      <h2 style="margin:0;font-size:clamp(28px,3.4vw,44px);line-height:1.3;letter-spacing:-0.02em">병원부터 시작해, 전문직 전반으로 넓혀갑니다.</h2>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:56px;align-items:flex-start">
+      <div style="flex:1 1 240px;display:flex;flex-direction:column;gap:2px;min-width:0">
+        <sc-for list="{{ fieldTabs }}" as="t" hint-placeholder-count="4">
+          <button onClick="{{ t.select }}" style="{{ t.style }}"><span>{{ t.name }}</span><span style="font-size:13px;font-style:italic">{{ t.phase }}</span></button>
+        </sc-for>
+      </div>
+      <div style="flex:2 1 440px;display:flex;flex-direction:column;gap:var(--space-8);min-width:0">
+        <div style="display:flex;flex-direction:column;gap:var(--space-4)">
+          <sc-if value="{{ field.priority }}" hint-placeholder-val="{{ true }}">
+            <span class="tag tag-accent-2" style="font-size:13px;align-self:flex-start">우선 집중 분야</span>
+          </sc-if>
+          <h3 style="margin:0;font-size:clamp(26px,3vw,36px);line-height:1.35;letter-spacing:-0.02em">{{ field.headline }}</h3>
+          <p style="margin:0;font-size:18px;line-height:1.8;color:var(--color-neutral-800);max-width:620px">{{ field.desc }}</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:var(--space-3)">
+          <span style="font-size:14px;font-style:italic;color:var(--color-neutral-700)">이렇게 만듭니다</span>
+          <sc-for list="{{ field.examples }}" as="e" hint-placeholder-count="3">
+            <span style="font-size:16px;line-height:1.65;color:var(--color-accent-800)">— {{ e }}</span>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="max-width:1200px;margin:0 auto;padding:0 var(--space-6) 128px;display:flex;flex-direction:column;gap:var(--space-6);align-items:flex-start">
+    <h2 style="margin:0;font-size:clamp(28px,3.6vw,48px);line-height:1.3;letter-spacing:-0.02em;max-width:760px">지금 AI는 우리 기관을 어떻게 설명하고 있을까요?</h2>
+    <p style="margin:0;font-size:18px;line-height:1.75;color:var(--color-neutral-800);max-width:600px">상담 신청 시 공개 정보와 AI 답변을 먼저 살펴보고 연락드립니다.</p>
+    <button class="btn btn-primary" onClick="{{ goContact }}" style="padding:14px 24px;font-size:16px">무료 상담 신청</button>
+  </section>
+</sc-if>
+
+<sc-if value="{{ pageServices }}" hint-placeholder-val="{{ false }}">
+  <section style="max-width:1200px;margin:0 auto;padding:96px var(--space-6) 112px;display:flex;flex-direction:column;gap:80px">
+    <div style="display:flex;flex-direction:column;gap:var(--space-4);max-width:760px">
+      <span style="font-size:14px;color:var(--color-accent-700)">서비스</span>
+      <h1 style="margin:0;font-size:clamp(34px,4.6vw,60px);line-height:1.22;letter-spacing:-0.03em">진단에서 시작해, 매달 함께 관리합니다.</h1>
+      <p style="margin:0;font-size:19px;line-height:1.75;color:var(--color-neutral-800)">부담 없는 진단으로 현재 상태를 확인하고, 검증된 콘텐츠로 품질을 보여드린 뒤, 월간 관리로 이어갑니다.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:72px var(--space-8)">
+      <sc-for list="{{ services }}" as="s" hint-placeholder-count="3">
+        <div style="display:flex;flex-direction:column;gap:var(--space-3)">
+          <span style="font-size:15px;color:var(--color-accent-2-700);font-style:italic">{{ s.no }}</span>
+          <h2 style="margin:0;font-size:28px;line-height:1.35;letter-spacing:-0.01em">{{ s.title }}</h2>
+          <p style="margin:0;font-size:17px;line-height:1.8;color:var(--color-neutral-800)">{{ s.desc }}</p>
+          <span style="font-size:15px;line-height:1.6"><span style="color:var(--color-neutral-700)">결과물 — </span>{{ s.out }}</span>
+        </div>
+      </sc-for>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:var(--space-4)">
+      <span style="font-size:14px;color:var(--color-neutral-700);font-style:italic">함께 제공하는 콘텐츠</span>
+      <div style="display:flex;gap:var(--space-2);flex-wrap:wrap">
+        <span class="tag tag-neutral" style="font-size:14px;padding:6px 12px">네이버 공식 블로그 운영</span>
+        <span class="tag tag-neutral" style="font-size:14px;padding:6px 12px">유튜브·소개 영상 기획</span>
+        <span class="tag tag-neutral" style="font-size:14px;padding:6px 12px">숏폼 콘텐츠</span>
+        <span class="tag tag-neutral" style="font-size:14px;padding:6px 12px">정보성 비교표</span>
+        <span class="tag tag-neutral" style="font-size:14px;padding:6px 12px">의료·법률 광고 심의 검수</span>
+      </div>
+    </div>
+  </section>
+
+  <section style="max-width:1200px;margin:0 auto;padding:0 var(--space-6) 112px;display:flex;flex-direction:column;gap:var(--space-8)">
+    <div style="display:flex;flex-direction:column;gap:var(--space-3);max-width:760px">
+      <span style="font-size:14px;color:var(--color-accent-700)">GEO 진단 보고서</span>
+      <h2 style="margin:0;font-size:clamp(28px,3.4vw,44px);line-height:1.3;letter-spacing:-0.02em">진단 보고서에는 이런 내용이 담깁니다.</h2>
+    </div>
+    <div style="overflow-x:auto">
+      <table class="table" style="width:100%;min-width:640px;font-size:16px;line-height:1.6">
+        <thead><tr><th style="text-align:left;width:22%">단계</th><th style="text-align:left">조사 및 분석</th><th style="text-align:left;width:32%">고객 가치</th></tr></thead>
+        <tbody>
+          <sc-for list="{{ report }}" as="r" hint-placeholder-count="4">
+            <tr><td style="font-weight:600;vertical-align:top">{{ r.step }}</td><td style="vertical-align:top">{{ r.what }}</td><td style="vertical-align:top;color:var(--color-neutral-800)">{{ r.value }}</td></tr>
+          </sc-for>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section style="max-width:1200px;margin:0 auto;padding:0 var(--space-6) 128px;display:flex;flex-direction:column;gap:56px">
+    <div style="display:flex;flex-direction:column;gap:var(--space-3);max-width:760px">
+      <span style="font-size:14px;color:var(--color-accent-700)">운영 원칙</span>
+      <h2 style="margin:0;font-size:clamp(28px,3.4vw,44px);line-height:1.3;letter-spacing:-0.02em">온결이 반드시 지키는 네 가지</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:56px var(--space-8)">
+      <sc-for list="{{ principles }}" as="p" hint-placeholder-count="4">
+        <div style="display:flex;flex-direction:column;gap:var(--space-3)">
+          <span style="font-size:36px;font-weight:700;color:var(--color-accent-700);line-height:1">{{ p.no }}</span>
+          <h3 style="margin:0;font-size:21px;line-height:1.4">{{ p.title }}</h3>
+          <p style="margin:0;font-size:16px;line-height:1.8;color:var(--color-neutral-800)">{{ p.desc }}</p>
+        </div>
+      </sc-for>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:var(--space-6);align-items:flex-start;padding-top:var(--space-8)">
+      <h2 style="margin:0;font-size:clamp(26px,3.2vw,40px);line-height:1.35;max-width:720px">어떤 단계부터 시작할지 상담에서 함께 정합니다.</h2>
+      <button class="btn btn-primary" onClick="{{ goContact }}" style="padding:14px 24px;font-size:16px">무료 상담 신청</button>
+    </div>
+  </section>
+</sc-if>
+
+<sc-if value="{{ pageWork }}" hint-placeholder-val="{{ false }}">
+  <section style="max-width:1200px;margin:0 auto;padding:96px var(--space-6) 128px;display:flex;flex-direction:column;gap:56px">
+    <div style="display:flex;flex-direction:column;gap:var(--space-4);max-width:760px">
+      <span style="font-size:14px;color:var(--color-accent-700)">포트폴리오</span>
+      <h1 style="margin:0;font-size:clamp(34px,4.6vw,60px);line-height:1.22;letter-spacing:-0.03em">진단 사례와 작업 결과</h1>
+      <p style="margin:0;font-size:19px;line-height:1.75;color:var(--color-neutral-800)">샘플 진단 보고서와 실제 작업 결과를 순차적으로 공개합니다.</p>
+    </div>
+    <div style="display:flex;gap:var(--space-2);flex-wrap:wrap">
+      <sc-for list="{{ workFilters }}" as="f" hint-placeholder-count="4">
+        <button onClick="{{ f.select }}" style="{{ f.style }}">{{ f.name }}</button>
+      </sc-for>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:56px var(--space-8)">
+      <sc-for list="{{ works }}" as="w" hint-placeholder-count="6">
+        <article style="display:flex;flex-direction:column;gap:var(--space-3)">
+          <div style="{{ w.cover.box }}">
+            <div style="{{ w.cover.rule }}">
+              <span style="display:flex;align-items:center;gap:6px"><img src="assets/logo-mark.png" alt="" style="{{ w.cover.logo }}"></img>ONGYEOL MEDIA</span>
+              <span style="font-style:italic">{{ w.cover.kind }}</span>
+            </div>
+            <span style="{{ w.cover.kick }}">{{ w.cover.kicker }}</span>
+            <span style="font-size:clamp(18px,1.9vw,24px);font-weight:700;line-height:1.25;letter-spacing:-0.02em">{{ w.cover.head }}</span>
+            <div style="flex:1;display:flex;align-items:flex-end;gap:6px;min-height:0">
+              <sc-for list="{{ w.cover.bars }}" as="b" hint-placeholder-count="0">
+                <div style="{{ b.style }}"></div>
+              </sc-for>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:3px">
+              <sc-for list="{{ w.cover.lines }}" as="l" hint-placeholder-count="3">
+                <span style="font-size:11.5px;line-height:1.45;opacity:.85">{{ l }}</span>
+              </sc-for>
+            </div>
+          </div>
+          <span style="font-size:14px;color:var(--color-accent-700)">{{ w.tag }}</span>
+          <h2 style="margin:0;font-size:21px;line-height:1.4">{{ w.title }}</h2>
+          <span style="font-size:15px;font-style:italic;color:var(--color-neutral-700)">{{ w.result }}</span>
+        </article>
+      </sc-for>
+    </div>
+  </section>
+</sc-if>
+
+<sc-if value="{{ pageContact }}" hint-placeholder-val="{{ false }}">
+  <section style="max-width:1200px;margin:0 auto;padding:96px var(--space-6) 128px;display:flex;flex-wrap:wrap;gap:72px;align-items:flex-start">
+    <div style="flex:1 1 340px;display:flex;flex-direction:column;gap:var(--space-4);min-width:0">
+      <span style="font-size:14px;color:var(--color-accent-700)">진단 문의 및 파트너십 상담</span>
+      <h1 style="margin:0;font-size:clamp(34px,4.4vw,56px);line-height:1.25;letter-spacing:-0.03em">전문 정보가 올바르게 인용되도록, 함께하겠습니다.</h1>
+      <p style="margin:0;font-size:18px;line-height:1.8;color:var(--color-neutral-800)">남겨주신 정보로 공개 정보와 AI 답변 현황을 먼저 살펴본 뒤, 영업일 기준 2일 안에 연락드립니다.</p>
+      <div style="display:flex;flex-direction:column;gap:var(--space-2);font-size:17px;padding-top:var(--space-4)">
+        <span style="font-weight:600">담당 김형준 실장</span>
+        <a href="tel:010-8001-1247">010-8001-1247</a>
+        <a href="mailto:point1247@nate.com">point1247@nate.com</a>
+      </div>
+    </div>
+    <div style="flex:1 1 380px;min-width:0">
+    <sc-if value="{{ notSubmitted }}" hint-placeholder-val="{{ true }}">
+      <form onSubmit="{{ submit }}" style="display:flex;flex-direction:column;gap:var(--space-6)">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:var(--space-4)">
+          <label class="field" style="display:flex;flex-direction:column;gap:var(--space-2);font-size:15px">성함<input class="input" required="" placeholder="홍길동" style="font-size:16px;min-height:48px"></input></label>
+          <label class="field" style="display:flex;flex-direction:column;gap:var(--space-2);font-size:15px">연락처<input class="input" required="" placeholder="010-0000-0000" style="font-size:16px;min-height:48px"></input></label>
+        </div>
+        <label class="field" style="display:flex;flex-direction:column;gap:var(--space-2);font-size:15px">기관명<input class="input" placeholder="OO의원 / OO법률사무소" style="font-size:16px;min-height:48px"></input></label>
+        <div style="display:flex;flex-direction:column;gap:var(--space-2);font-size:15px">
+          <span>분야</span>
+          <div style="display:flex;gap:var(--space-2);flex-wrap:wrap">
+            <sc-for list="{{ formFields }}" as="o" hint-placeholder-count="4">
+              <button type="button" onClick="{{ o.select }}" style="{{ o.style }}">{{ o.name }}</button>
+            </sc-for>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:var(--space-2);font-size:15px">
+          <span>관심 서비스 (복수 선택)</span>
+          <div style="display:flex;gap:var(--space-2);flex-wrap:wrap">
+            <sc-for list="{{ formServices }}" as="o" hint-placeholder-count="4">
+              <button type="button" onClick="{{ o.select }}" style="{{ o.style }}">{{ o.name }}</button>
+            </sc-for>
+          </div>
+        </div>
+        <label class="field" style="display:flex;flex-direction:column;gap:var(--space-2);font-size:15px">홈페이지·블로그 주소 / 문의 내용<textarea class="input" rows="4" placeholder="운영 중인 채널 주소, 궁금하신 점 등" style="font-size:16px;resize:vertical"></textarea></label>
+        <button type="submit" class="btn btn-primary" style="padding:16px;font-size:17px">상담 신청하기</button>
+        <span style="font-size:13px;color:var(--color-neutral-700)">제출 시 상담 목적의 개인정보 수집·이용에 동의하게 됩니다.</span>
+      </form>
+    </sc-if>
+    <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
+      <div style="display:flex;flex-direction:column;gap:var(--space-3);padding-top:var(--space-6)">
+        <span style="font-size:15px;color:var(--color-accent-700)">접수 완료</span>
+        <h2 style="margin:0;font-size:32px;line-height:1.35">신청해 주셔서 감사합니다.</h2>
+        <p style="margin:0;font-size:18px;line-height:1.75;color:var(--color-neutral-800)">영업일 기준 2일 안에 김형준 실장이 직접 연락드리겠습니다.</p>
+      </div>
+    </sc-if>
+    </div>
+  </section>
+</sc-if>
+
+</main>
+
+<footer style="max-width:1200px;width:100%;margin:0 auto;box-sizing:border-box;padding:var(--space-8) var(--space-6) 56px;display:flex;justify-content:space-between;gap:var(--space-6);flex-wrap:wrap;font-size:14px;line-height:1.8;color:var(--color-neutral-700)">
+  <div style="display:flex;align-items:center;gap:var(--space-3)">
+    <img src="assets/logo-mark.png" alt="" style="height:40px;width:auto;mix-blend-mode:multiply"></img>
+    <div style="display:flex;flex-direction:column">
+      <span style="font-size:20px;font-weight:700;color:var(--color-text)">온결미디어 <span style="font-size:13px;font-weight:400;letter-spacing:0.12em">ONGYEOL MEDIA</span></span>
+      <span style="font-style:italic">콘텐츠를 만들고, 브랜드의 성장을 연결합니다.</span>
+    </div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:var(--space-1)">
+    <span>담당 김형준 실장 · 010-8001-1247 · point1247@nate.com</span>
+    <span>© 2026 Ongyeol Media</span>
+  </div>
+</footer>
+
+<div style="position:fixed;left:20px;bottom:20px;z-index:20;display:flex;align-items:center;gap:var(--space-2);background:var(--color-bg);box-shadow:var(--shadow-md);padding:6px;border-radius:var(--radius-lg);font-size:13px">
+  <span style="padding:0 6px;color:var(--color-neutral-700)">시안</span>
+  <sc-for list="{{ dirOpts }}" as="d" hint-placeholder-count="2">
+    <button onClick="{{ d.select }}" style="{{ d.style }}">{{ d.label }}</button>
+  </sc-for>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;direction&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;edition&quot;,&quot;quiet&quot;],&quot;default&quot;:&quot;edition&quot;,&quot;tsType&quot;:&quot;'edition'|'quiet'&quot;,&quot;section&quot;:&quot;시안&quot;}}">
+class Component extends DCLogic {
+  state = { page: 'home', field: 0, filter: '전체', formField: null, formSvc: [], submitted: false, dir: null };
+  fields = [
+    { name: '병원·의료기관', phase: 'Phase 01', priority: true, headline: '환자가 AI에게 묻는 질문에, 병원의 공식 답이 나오도록', desc: '의료 분야는 환자의 불안과 질문 검색이 가장 많고, 잘못된 정보의 위험도 가장 큽니다. 진료·검사 정보를 구조화하고 의료법과 광고 심의 기준을 엄격히 지키며 환자 질문에 답합니다.', examples: ['진료과·의료진 공식 정보 일관성 정비', '증상·비용·절차 중심 환자 FAQ', '전문 칼럼과 진료 소개 영상 기획'] },
+    { name: '변호사·법률사무소', phase: 'Phase 02', priority: false, headline: '급하게 검색하는 의뢰인에게 정확한 첫 안내를', desc: '법률 문제는 갑자기, 급하게 찾습니다. 사건별 대응 절차와 구비 서류를 정리해 의뢰인과 AI 모두가 신뢰할 수 있는 정보로 만듭니다.', examples: ['사건 유형별 대응 절차 가이드', '구비 서류 체크리스트', '변호사 광고 규정 기준 검수'] },
+    { name: '법무사 사무소', phase: 'Phase 03', priority: false, headline: '등기와 상속, 실무 정보를 한눈에', desc: '등기·상속처럼 절차가 복잡한 실무 정보를 체계적으로 정리해, 검색과 AI 답변에서 먼저 참고되는 사무소로 만듭니다.', examples: ['등기·상속 절차 안내 콘텐츠', '자주 묻는 실무 질문 FAQ', '비용·기간 정보 비교표'] },
+    { name: '일반 기업·B2B', phase: 'Phase 04', priority: false, headline: '서비스를 정확히 설명하는 기업 콘텐츠', desc: '서비스 가이드와 전사 콘텐츠 브랜딩으로, 고객과 AI가 기업의 강점을 오해 없이 이해하도록 돕습니다.', examples: ['서비스 가이드·소개 자료', '업종별 인사이트 콘텐츠', '브랜드 소개 영상 기획'] }
+  ];
+  serviceList = [
+    { no: '서비스 A · 진입형', title: 'GEO 기초 진단', desc: '홈페이지·블로그의 공개 정보와 AI 답변을 관찰해, 정보 불일치와 개선 과제를 정리합니다.', out: '진단 분석 보고서 (PDF)' },
+    { no: '서비스 B · 실무형', title: '전문 콘텐츠 제작', desc: '고객의 핵심 질문 10~15개를 바탕으로 FAQ, 전문 블로그 원고, 정보성 비교표, 소개 영상을 기획·제작합니다.', out: '검수 완료 원고와 출처' },
+    { no: '서비스 C · 구독형', title: '월간 블로그·GEO 관리', desc: '정기 원고 발행, 공식 정보 동기화, AI 검색 가시성 추적, 월간 개선 리포트를 제공합니다.', out: '정기 보고서와 채널 운영' }
+  ];
+  toObj = str => Object.fromEntries(str.split(';').filter(Boolean).map(r => { const i = r.indexOf(':'); return [r.slice(0, i).trim().replace(/-([a-z])/g, (_, c) => c.toUpperCase()), r.slice(i + 1).trim()]; }));
+  go = page => { this.setState({ page }); window.scrollTo(0, 0); };
+  renderVals() {
+    const s = this.state, o = this.toObj;
+    const dir = s.dir ?? this.props.direction ?? 'edition';
+    const chip = on => o(`padding:10px 16px;border-radius:var(--radius-md);font-size:15px;cursor:pointer;border:1px solid ${on ? 'var(--color-accent)' : 'var(--color-divider)'};background:${on ? 'var(--color-accent)' : 'transparent'};color:${on ? 'var(--color-bg)' : 'var(--color-text)'}`);
+    const navs = [['home', '홈'], ['services', '서비스'], ['work', '포트폴리오'], ['contact', '문의']];
+    const works = [
+      { cat: '병원', slot: '샘플 진단 보고서 표지', tag: '병원 · GEO 진단', title: '병원 GEO 샘플 진단 보고서', result: '공개 예정' },
+      { cat: '병원', slot: '블로그 칼럼 화면', tag: '병원 · 전문 콘텐츠', title: '진료과별 환자 FAQ 칼럼', result: '작업 중' },
+      { cat: '병원', slot: '월간 리포트 화면', tag: '병원 · 월간 관리', title: 'AI 답변 변화 월간 리포트', result: '공개 예정' },
+      { cat: '법률', slot: '가이드 화면', tag: '법률 · 전문 콘텐츠', title: '사건별 대응 절차 가이드', result: '준비 중' },
+      { cat: '온결', slot: '온결미디어 블로그 화면', tag: '온결미디어 · 공식 블로그', title: 'GEO 마케팅 가이드', result: '연재 중' }
+    ];
+    const bar = (h, hi) => ({ style: o(`flex:1;height:${h}%;background:${hi ? 'var(--color-bg)' : 'var(--color-accent-400)'};border-radius:1px`) });
+    const themes = [
+      { bg: 'var(--color-accent-800)', ink: 'var(--color-bg)', kick: 'var(--color-accent-300)', dark: true },
+      { bg: 'var(--color-accent-2-200)', ink: 'var(--color-accent-2-900)', kick: 'var(--color-accent-2-700)', dark: false },
+      { bg: 'var(--color-accent-700)', ink: 'var(--color-bg)', kick: 'var(--color-accent-200)', dark: true },
+      { bg: 'var(--color-accent-2-800)', ink: 'var(--color-bg)', kick: 'var(--color-accent-2-300)', dark: true },
+      { bg: 'var(--color-accent-200)', ink: 'var(--color-accent-900)', kick: 'var(--color-accent-700)', dark: false }
+    ].map(t => ({
+      box: o(`aspect-ratio:16/10;background:${t.bg};color:${t.ink};border-radius:var(--radius-md);padding:var(--space-4) var(--space-6);box-sizing:border-box;display:flex;flex-direction:column;gap:var(--space-2);overflow:hidden;box-shadow:var(--shadow-md)`),
+      rule: o(`display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid currentColor;padding-bottom:var(--space-1);font-size:11px;letter-spacing:0.08em`),
+      logo: o(t.dark ? 'height:16px;filter:grayscale(1) invert(1) brightness(1.6);mix-blend-mode:screen' : 'height:16px;mix-blend-mode:multiply'),
+      kick: o(`font-size:12px;color:${t.kick};padding-top:var(--space-1);font-weight:600`)
+    }));
+    const covers = [
+      { kind: 'Diagnosis Report', kicker: 'SAMPLE · 병원 GEO', head: '병원 GEO 기초 진단 보고서', bars: [], lines: ['1. 공개 정보 점검   2. 핵심 질문 15선', '3. AI 답변 관찰   4. 개선 실행 계획', '진단 대상 — OO의원 · 2026.11'] },
+      { kind: 'Column', kicker: '병원 GEO 연구소', head: '“이 증상, 어느 과에 가야 할까요?”', bars: [], lines: ['Q. 진료 전 준비할 것은 무엇인가요?', 'Q. 검사 비용과 소요 시간은?', 'Q. 보호자가 함께 가야 하나요?'] },
+      { kind: 'Monthly Report', kicker: '질문별 AI 답변 인용 추이', head: 'AI 답변 변화 리포트', bars: [18, 26, 30, 42, 55, 68].map((h, i) => bar(h, i === 5)), lines: ['ChatGPT · Gemini · 네이버 AI 관찰'] },
+      { kind: 'Guide', kicker: '법률·법무 연구소', head: '사건별 대응 절차 가이드', bars: [], lines: ['□ 사건 발생 직후 확인할 것', '□ 구비 서류 체크리스트', '□ 상담 전 정리해 둘 질문'] },
+      { kind: 'Official Blog', kicker: 'GEO 마케팅 가이드 · 01', head: 'AI는 어떤 정보를 인용할까', bars: [], lines: ['SEO에서 GEO로, 검색의 전환', 'FAQ 구조화와 공식 정보 일관성', '온결미디어 공식 블로그 연재'] }
+    ];
+    covers[1].lines = covers[1].lines.slice(0, 2);
+    works.forEach((w, i) => { w.cover = { ...covers[i], ...themes[i] }; });
+    return {
+      isEdition: dir === 'edition', isQuiet: dir === 'quiet',
+      dirOpts: [['edition', 'A 신문'], ['quiet', 'B 여백']].map(([k, l]) => ({ label: l, select: () => this.setState({ dir: k }), style: o(`border:0;cursor:pointer;padding:6px 12px;border-radius:var(--radius-md);font-size:13px;background:${dir === k ? 'var(--color-text)' : 'transparent'};color:${dir === k ? 'var(--color-bg)' : 'var(--color-text)'}`) })),
+      navItems: navs.map(([k, l]) => ({ label: l, go: () => this.go(k), style: o(`background:none;border:0;cursor:pointer;padding:8px 10px;font-size:16px;color:${s.page === k ? 'var(--color-accent-700)' : 'var(--color-text)'};text-decoration:${s.page === k ? 'underline' : 'none'};text-underline-offset:6px`) })),
+      goHome: () => this.go('home'), goServices: () => this.go('services'), goContact: () => this.go('contact'),
+      pageHome: s.page === 'home', pageServices: s.page === 'services', pageWork: s.page === 'work', pageContact: s.page === 'contact',
+      method: [
+        { en: 'GEO Diagnosis', title: '진단', desc: '공개 정보와 생성형 AI의 검색 답변을 정밀하게 분석해 정보 누락과 개선점을 찾습니다.' },
+        { en: 'Factual Content', title: '제작', desc: '철저한 사실 확인과 실제 고객 질문을 바탕으로, AI가 인용하기 좋은 전문 콘텐츠를 만듭니다.' },
+        { en: 'Iterative Growth', title: '관리', desc: '검색 변화를 정기적으로 관찰하고 정보를 업데이트해 온라인 경쟁력을 꾸준히 강화합니다.' }
+      ],
+      fieldTabs: this.fields.map((f, i) => ({ name: f.name, phase: f.phase, select: () => this.setState({ field: i }), style: o(`display:flex;justify-content:space-between;align-items:baseline;gap:16px;background:none;border:0;cursor:pointer;text-align:left;padding:12px 0;font-size:${i === s.field ? '22px' : '18px'};font-weight:${i === s.field ? 600 : 400};color:${i === s.field ? 'var(--color-accent-700)' : 'var(--color-neutral-700)'}`) })),
+      field: this.fields[s.field],
+      services: this.serviceList,
+      report: [
+        { step: '1. 공개 정보 점검', what: '홈페이지, 블로그, 지도 정보의 진료과·의료진 정보 일관성 확인', value: '공식 정보 불일치로 인한 신뢰도 하락 예방' },
+        { step: '2. 핵심 질문 15선', what: '환자와 보호자가 AI에 실제로 묻는 증상·비용·절차 질문 추출', value: '고객의 실제 관심사와 검색 의도 명확화' },
+        { step: '3. AI 답변 관찰', what: 'ChatGPT, Gemini 등 주요 대화형 AI의 실제 답변과 출처 대조', value: 'AI 검색 환경 내 가시성과 누락 파악' },
+        { step: '4. 개선 실행 계획', what: '우선 수정할 정보, 신규 FAQ 기획, 정기 원고 스케줄 제시', value: '바로 실행할 수 있는 우선순위 정리' }
+      ],
+      principles: [
+        { no: '01', title: '허위 노출 보장 금지', desc: '알고리즘 추천이나 무조건적인 상위 노출을 약속하지 않습니다. 검증 가능한 정보 구조 개선과 사실 확인에 집중합니다.' },
+        { no: '02', title: '의료법·규정 준수', desc: '과장된 효과나 검증되지 않은 후기 형태를 지양하며, 고객사의 공식 자료와 사전 검수를 반드시 거칩니다.' },
+        { no: '03', title: '투명한 지표 보고', desc: '질문별 AI 답변 변화, 출처 인용 현황, 채널 유입 데이터를 정직하게 공유합니다.' },
+        { no: '04', title: '비용 효율적 성장', desc: '불필요한 고정 비용 없이, 실제 반응과 투입 시간을 기준으로 현실적인 운영 계획을 세웁니다.' }
+      ],
+      workFilters: ['전체', '병원', '법률', '온결'].map(n => ({ name: n === '온결' ? '온결미디어' : n, select: () => this.setState({ filter: n }), style: chip(s.filter === n) })),
+      works: works.filter(w => s.filter === '전체' || w.cat === s.filter),
+      formFields: ['병원·의료기관', '변호사·법률', '법무사', '일반 기업·B2B', '기타'].map((n, i) => ({ name: n, select: () => this.setState({ formField: i }), style: chip(s.formField === i) })),
+      formServices: ['GEO 기초 진단', '전문 콘텐츠 제작', '월간 블로그·GEO 관리', '영상 기획'].map((n, i) => ({ name: n, select: () => this.setState(st => ({ formSvc: st.formSvc.includes(i) ? st.formSvc.filter(x => x !== i) : [...st.formSvc, i] })), style: chip(s.formSvc.includes(i)) })),
+      submitted: s.submitted, notSubmitted: !s.submitted,
+      submit: e => { e.preventDefault(); this.setState({ submitted: true }); }
+    };
+  }
+}
+</script>
+</body>
+</html>

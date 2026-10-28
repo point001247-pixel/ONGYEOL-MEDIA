@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700&family=JetBrains+Mono:wght@400&display=swap">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#f6f4ef;color:#1d1c1a;font-family:Pretendard,system-ui,sans-serif;-webkit-font-smoothing:antialiased;word-break:keep-all}
+a{color:#2f5a4a;text-decoration:none}a:hover{color:#1d1c1a}
+input,textarea,select,button{font-family:inherit}
+</style>
+</helmet>
+
+<div style="min-height:100vh;display:flex;flex-direction:column">
+
+<header style="position:sticky;top:0;z-index:10;background:rgba(246,244,239,.92);backdrop-filter:blur(8px);border-bottom:1px solid #e3dfd6">
+  <div style="max-width:1200px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
+    <a href="#top" style="display:flex;align-items:baseline;gap:8px;color:#1d1c1a">
+      <span style="font-family:'Noto Serif KR',serif;font-weight:700;font-size:22px;letter-spacing:-0.02em">온결</span>
+      <span style="font-size:13px;letter-spacing:0.2em;color:#6b675f">MEDIA</span>
+    </a>
+    <nav style="display:flex;gap:28px;font-size:15px;flex-wrap:wrap">
+      <a href="#about" style="color:#3d3a35">소개</a>
+      <a href="#fields" style="color:#3d3a35">분야별 솔루션</a>
+      <a href="#process" style="color:#3d3a35">진행 방식</a>
+      <a href="#work" style="color:#3d3a35">사례</a>
+      <a href="#faq" style="color:#3d3a35">FAQ</a>
+    </nav>
+    <a href="#contact" style="background:#1d1c1a;color:#f6f4ef;padding:10px 18px;border-radius:999px;font-size:14px;font-weight:600" style-hover="background:#2f5a4a;color:#f6f4ef">{{ ctaLabel }}</a>
+  </div>
+</header>
+
+<main id="top">
+
+<sc-if value="{{ isSplit }}" hint-placeholder-val="{{ true }}">
+<section style="max-width:1200px;margin:0 auto;padding:96px 24px 80px;display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:56px;align-items:center">
+  <div style="display:flex;flex-direction:column;gap:28px">
+    <span style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.12em;color:#2f5a4a">전문직 온라인 콘텐츠 컨설팅</span>
+    <h1 style="margin:0;font-family:'Noto Serif KR',serif;font-weight:700;font-size:clamp(36px,5.2vw,64px);line-height:1.22;letter-spacing:-0.03em;text-wrap:pretty">전문성은 이미 충분합니다.<br>이제, 제대로 <span style="color:#2f5a4a">보이게</span> 할 차례입니다.</h1>
+    <p style="margin:0;font-size:18px;line-height:1.75;color:#4a4740;max-width:520px;text-wrap:pretty">병원·법률·세무 전문가를 위한 유튜브와 네이버 블로그 운영. 현직 크리에이터가 직접 기획하고, 광고 심의 기준까지 지키며 신뢰를 쌓는 콘텐츠를 만듭니다.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <a href="#contact" style="background:#2f5a4a;color:#f6f4ef;padding:16px 26px;border-radius:999px;font-weight:600;font-size:16px" style-hover="background:#1d1c1a;color:#f6f4ef">{{ ctaLabel }}</a>
+      <a href="#fields" style="border:1px solid #c9c3b6;color:#1d1c1a;padding:16px 26px;border-radius:999px;font-weight:500;font-size:16px" style-hover="border-color:#1d1c1a;color:#1d1c1a">분야별 솔루션 보기</a>
+    </div>
+  </div>
+  <div style="aspect-ratio:4/5;border-radius:4px;background:repeating-linear-gradient(135deg,#ebe7de 0 10px,#e4dfd4 10px 20px);display:flex;align-items:flex-end;padding:20px">
+    <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#6b675f;background:#f6f4ef;padding:6px 10px">대표 프로필 사진 / 촬영 현장 컷</span>
+  </div>
+</section>
+</sc-if>
+
+<sc-if value="{{ isCentered }}" hint-placeholder-val="{{ false }}">
+<section style="max-width:960px;margin:0 auto;padding:120px 24px 96px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:28px">
+  <span style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.12em;color:#2f5a4a">전문직 온라인 콘텐츠 컨설팅</span>
+  <h1 style="margin:0;font-family:'Noto Serif KR',serif;font-weight:700;font-size:clamp(38px,6vw,76px);line-height:1.2;letter-spacing:-0.03em;text-wrap:balance">전문성은 이미 충분합니다.<br>이제, 제대로 <span style="color:#2f5a4a">보이게</span> 할 차례입니다.</h1>
+  <p style="margin:0;font-size:18px;line-height:1.75;color:#4a4740;max-width:600px">병원·법률·세무 전문가를 위한 유튜브와 네이버 블로그 운영. 현직 크리에이터가 직접 기획하고, 광고 심의 기준까지 지키며 신뢰를 쌓는 콘텐츠를 만듭니다.</p>
+  <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
+    <a href="#contact" style="background:#2f5a4a;color:#f6f4ef;padding:16px 26px;border-radius:999px;font-weight:600;font-size:16px" style-hover="background:#1d1c1a;color:#f6f4ef">{{ ctaLabel }}</a>
+    <a href="#fields" style="border:1px solid #c9c3b6;color:#1d1c1a;padding:16px 26px;border-radius:999px;font-weight:500;font-size:16px">분야별 솔루션 보기</a>
+  </div>
+</section>
+</sc-if>
+
+<section style="border-top:1px solid #e3dfd6;border-bottom:1px solid #e3dfd6">
+  <div style="max-width:1200px;margin:0 auto;padding:28px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px">
+    <div style="display:flex;flex-direction:column;gap:4px"><span style="font-family:'Noto Serif KR',serif;font-size:30px;font-weight:700">00만+</span><span style="font-size:14px;color:#6b675f">유튜브 채널 구독자</span></div>
+    <div style="display:flex;flex-direction:column;gap:4px"><span style="font-family:'Noto Serif KR',serif;font-size:30px;font-weight:700">000만</span><span style="font-size:14px;color:#6b675f">블로그 누적 방문</span></div>
+    <div style="display:flex;flex-direction:column;gap:4px"><span style="font-family:'Noto Serif KR',serif;font-size:30px;font-weight:700">00곳</span><span style="font-size:14px;color:#6b675f">운영 중인 파트너</span></div>
+    <div style="display:flex;flex-direction:column;gap:4px"><span style="font-family:'Noto Serif KR',serif;font-size:30px;font-weight:700">0년</span><span style="font-size:14px;color:#6b675f">콘텐츠 제작 경력</span></div>
+  </div>
+</section>
+
+<section id="about" style="max-width:1200px;margin:0 auto;padding:112px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:56px">
+  <div style="display:flex;flex-direction:column;gap:16px">
+    <span style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.12em;color:#2f5a4a">01 — 왜 온결인가</span>
+    <h2 style="margin:0;font-family:'Noto Serif KR',serif;font-size:clamp(28px,3.4vw,42px);line-height:1.35;letter-spacing:-0.02em;text-wrap:pretty">대행사가 아닌,<br>매일 콘텐츠를 만드는 사람이 직접 합니다.</h2>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:32px">
+    <p style="margin:0;font-size:17px;line-height:1.85;color:#4a4740">온결(溫結)은 ‘따뜻하게 맺는다’는 뜻입니다. 전문가와 고객 사이의 첫 만남은 이제 검색창과 영상에서 시작됩니다. 저는 유튜브 크리에이터이자 네이버 블로거로서 직접 채널을 키워온 방식 그대로, 여러분의 전문성이 신뢰로 이어지도록 설계합니다.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:#e3dfd6;border:1px solid #e3dfd6">
+      <div style="background:#f6f4ef;padding:24px;display:flex;flex-direction:column;gap:8px"><strong style="font-size:16px">현장형 기획</strong><span style="font-size:14px;line-height:1.7;color:#6b675f">알고리즘과 검색 로직을 매일 체감하는 운영자의 감각</span></div>
+      <div style="background:#f6f4ef;padding:24px;display:flex;flex-direction:column;gap:8px"><strong style="font-size:16px">심의 준수</strong><span style="font-size:14px;line-height:1.7;color:#6b675f">의료법·변호사 광고 규정을 반영한 안전한 표현</span></div>
+      <div style="background:#f6f4ef;padding:24px;display:flex;flex-direction:column;gap:8px"><strong style="font-size:16px">원스톱 제작</strong><span style="font-size:14px;line-height:1.7;color:#6b675f">기획·촬영·편집·업로드·리포트까지 한 팀에서</span></div>
+      <div style="background:#f6f4ef;padding:24px;display:flex;flex-direction:column;gap:8px"><strong style="font-size:16px">문의로 이어지는 구조</strong><span style="font-size:14px;line-height:1.7;color:#6b675f">조회수보다 상담·내원 전환을 기준으로</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="fields" style="background:#1d1c1a;color:#f6f4ef">
+  <div style="max-width:1200px;margin:0 auto;padding:112px 24px;display:flex;flex-direction:column;gap:48px">
+    <div style="display:flex;flex-direction:column;gap:16px;max-width:720px">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.12em;color:#9cc2b0">02 — 분야별 솔루션</span>
+      <h2 style="margin:0;font-family:'Noto Serif KR',serif;font-size:clamp(28px,3.4vw,42px);line-height:1.35;letter-spacing:-0.02em">업종마다 고객이 검색하는 질문이 다릅니다.</h2>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <sc-for list="{{ fieldTabs }}" as="t" hint-placeholder-count="5">
+        <button onClick="{{ t.select }}" style="{{ t.style }}">{{ t.name }}</button>
+      </sc-for>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px;border-top:1px solid #3a3833;padding-top:40px">
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <h3 style="margin:0;font-family:'Noto Serif KR',serif;font-size:28px;line-height:1.4">{{ field.headline }}</h3>
+        <p style="margin:0;font-size:16px;line-height:1.8;color:#c9c5bc">{{ field.desc }}</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <span style="font-size:13px;color:#9a968d">이런 고민이 있다면</span>
+        <sc-for list="{{ field.pains }}" as="p" hint-placeholder-count="3">
+          <div style="display:flex;gap:12px;font-size:15px;line-height:1.6;color:#e8e5de"><span style="color:#9cc2b0">—</span><span>{{ p }}</span></div>
+        </sc-for>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <span style="font-size:13px;color:#9a968d">콘텐츠 예시</span>
+        <sc-for list="{{ field.examples }}" as="e" hint-placeholder-count="3">
+          <div style="border:1px solid #3a3833;padding:14px 16px;font-size:15px;line-height:1.5;border-radius:4px">{{ e }}</div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="max-width:1200px;margin:0 auto;padding:112px 24px;display:flex;flex-direction:column;gap:48px">
+  <div style="display:flex;flex-direction:column;gap:16px">
+    <span style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.12em;color:#2f5a4a">03 — 서비스</span>
+    <h2 style="margin:0;font-family:'Noto Serif KR',serif;font-size:clamp(28px,3.4vw,42px);line-height:1.35;letter-spacing:-0.02em">필요한 채널만, 필요한 만큼.</h2>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px">
+    <sc-for list="{{ services }}" as="s" hint-placeholder-count="4">
+      <div style="border-top:2px solid #1d1c1a;padding-top:20px;display:flex;flex-direction:column;gap:12px">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#6b675f">{{ s.no }}</span>
+        <h3 style="margin:0;font-size:21px;font-weight:700">{{ s.title }}</h3>
+        <p style="margin:0;font-size:15px;line-height:1.75;color:#4a4740">{{ s.desc }}</p>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section id="process" style="background:#ece8df">
+  <div style="max-width:1200px;margin:0 auto;padding:112px 24px;display:flex;flex-direction:column;gap:48px">
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.12em;color:#2f5a4a">04 — 진행 방식</span>
+      <h2 style="margin:0;font-family:'Noto Serif KR',serif;font-size:clamp(28px,3.4vw,42px);line-height:1.35;letter-spacing:-0.02em">원장님·변호사님의 시간은 월 2시간이면 충분합니다.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:#d6d0c4;border:1px solid #d6d0c4">
+      <sc-for list="{{ steps }}" as="s" hint-placeholder-count="5">
+        <div style="background:#ece8df;padding:28px 24px;display:flex;flex-direction:column;gap:12px;min-height:180px">
+          <span style="font-family:'Noto Serif KR',serif;font-size:32px;color:#2f5a4a">{{ s.no }}</span>
+          <strong style="font-size:18px">{{ s.title }}</strong>
+          <span style="font-size:14px;line-height:1.7;color:#4a4740">{{ s.desc }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section id="work" style="max-width:1200px;margin:0 auto;padding:112px 24px;display:flex;flex-direction:column;gap:48px">
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap">
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.12em;color:#2f5a4a">05 — 사례</span>
+      <h2 style="margin:0;font-family:'Noto Serif KR',serif;font-size:clamp(28px,3.4vw,42px);line-height:1.35;letter-spacing:-0.02em">함께 만든 채널</h2>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:32px">
+    <sc-for list="{{ works }}" as="w" hint-placeholder-count="3">
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div style="aspect-ratio:16/10;border-radius:4px;background:repeating-linear-gradient(135deg,#ebe7de 0 10px,#e4dfd4 10px 20px);display:flex;align-items:flex-end;padding:16px">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#6b675f;background:#f6f4ef;padding:5px 9px">{{ w.slot }}</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <span style="font-size:13px;color:#2f5a4a;font-weight:600">{{ w.tag }}</span>
+          <strong style="font-size:18px;line-height:1.5">{{ w.title }}</strong>
+          <span style="font-size:14px;color:#6b675f">{{ w.result }}</span>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<sc-if value="{{ showPricing }}" hint-placeholder-val="{{ true }}">
+<section style="border-top:1px solid #e3dfd6">
+  <div style="max-width:1200px;margin:0 auto;padding:112px 24px;display:flex;flex-direction:column;gap:48px">
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.12em;color:#2f5a4a">06 — 패키지</span>
+      <h2 style="margin:0;font-family:'Noto Serif KR',serif;font-size:clamp(28px,3.4vw,42px);line-height:1.35;letter-spacing:-0.02em">시작 단계에 맞춰 고르세요.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px">
+      <sc-for list="{{ plans }}" as="p" hint-placeholder-count="3">
+        <div style="{{ p.style }}">
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <strong style="font-size:20px">{{ p.name }}</strong>
+            <span style="font-size:14px;line-height:1.6;opacity:.75">{{ p.for }}</span>
+          </div>
+          <span style="font-family:'Noto Serif KR',serif;font-size:30px;font-weight:700">{{ p.price }}</span>
+          <div style="display:flex;flex-direction:column;gap:10px;border-top:1px solid currentColor;padding-top:20px;opacity:.9">
+            <sc-for list="{{ p.items }}" as="i" hint-placeholder-count="4">
+              <span style="font-size:15px;line-height:1.5">· {{ i }}</span>
+            </sc-for>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+</sc-if>
+
+<section id="faq" style="background:#ece8df">
+  <div style="max-width:900px;margin:0 auto;padding:112px 24px;display:flex;flex-direction:column;gap:40px">
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.12em;color:#2f5a4a">자주 묻는 질문</span>
+      <h2 style="margin:0;font-family:'Noto Serif KR',serif;font-size:clamp(28px,3.4vw,42px);line-height:1.35;letter-spacing:-0.02em">FAQ</h2>
+    </div>
+    <div style="display:flex;flex-direction:column;border-top:1px solid #c9c3b6">
+      <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="5">
+        <div style="border-bottom:1px solid #c9c3b6">
+          <button onClick="{{ f.toggle }}" style="width:100%;background:none;border:0;padding:24px 0;display:flex;justify-content:space-between;gap:24px;text-align:left;cursor:pointer;font-size:18px;font-weight:600;color:#1d1c1a">
+            <span>{{ f.q }}</span><span style="font-family:'JetBrains Mono',monospace;color:#2f5a4a">{{ f.icon }}</span>
+          </button>
+          <sc-if value="{{ f.open }}" hint-placeholder-val="{{ false }}">
+            <p style="margin:0 0 24px;font-size:16px;line-height:1.8;color:#4a4740;max-width:720px">{{ f.a }}</p>
+          </sc-if>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section id="contact" style="max-width:1200px;margin:0 auto;padding:112px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:56px">
+  <div style="display:flex;flex-direction:column;gap:20px">
+    <span style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.12em;color:#2f5a4a">상담 신청</span>
+    <h2 style="margin:0;font-family:'Noto Serif KR',serif;font-size:clamp(30px,3.8vw,48px);line-height:1.3;letter-spacing:-0.02em">현재 채널 진단부터<br>무료로 시작하세요.</h2>
+    <p style="margin:0;font-size:16px;line-height:1.8;color:#4a4740">남겨주신 정보로 업종·지역 검색 현황을 분석해 영업일 기준 2일 안에 진단 리포트와 함께 연락드립니다.</p>
+    <div style="display:flex;flex-direction:column;gap:8px;font-size:15px;color:#4a4740;padding-top:12px">
+      <span>카카오톡 채널 · @온결미디어</span>
+      <span>이메일 · hello@ongyeol.media</span>
+    </div>
+  </div>
+  <sc-if value="{{ notSubmitted }}" hint-placeholder-val="{{ true }}">
+    <form onSubmit="{{ submit }}" style="display:flex;flex-direction:column;gap:18px;background:#fff;border:1px solid #e3dfd6;padding:32px;border-radius:6px">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px">
+        <label style="display:flex;flex-direction:column;gap:8px;font-size:14px;font-weight:600">성함<input required="" placeholder="홍길동" style="padding:14px;border:1px solid #d6d0c4;border-radius:4px;font-size:15px;background:#faf9f6"></input></label>
+        <label style="display:flex;flex-direction:column;gap:8px;font-size:14px;font-weight:600">연락처<input required="" placeholder="010-0000-0000" style="padding:14px;border:1px solid #d6d0c4;border-radius:4px;font-size:15px;background:#faf9f6"></input></label>
+      </div>
+      <label style="display:flex;flex-direction:column;gap:8px;font-size:14px;font-weight:600">기관명<input placeholder="OO의원 / OO법률사무소" style="padding:14px;border:1px solid #d6d0c4;border-radius:4px;font-size:15px;background:#faf9f6"></input></label>
+      <div style="display:flex;flex-direction:column;gap:8px;font-size:14px;font-weight:600">
+        <span>분야</span>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <sc-for list="{{ formFields }}" as="o" hint-placeholder-count="6">
+            <button type="button" onClick="{{ o.select }}" style="{{ o.style }}">{{ o.name }}</button>
+          </sc-for>
+        </div>
+      </div>
+      <label style="display:flex;flex-direction:column;gap:8px;font-size:14px;font-weight:600">운영 중인 채널 / 문의 내용<textarea rows="4" placeholder="블로그 주소, 유튜브 채널, 원하시는 방향 등" style="padding:14px;border:1px solid #d6d0c4;border-radius:4px;font-size:15px;background:#faf9f6;resize:vertical"></textarea></label>
+      <button type="submit" style="background:#2f5a4a;color:#f6f4ef;border:0;padding:18px;border-radius:999px;font-size:16px;font-weight:600;cursor:pointer" style-hover="background:#1d1c1a">무료 채널 진단 신청</button>
+      <span style="font-size:12px;color:#8a867d">제출 시 상담 목적의 개인정보 수집·이용에 동의하게 됩니다.</span>
+    </form>
+  </sc-if>
+  <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
+    <div style="background:#2f5a4a;color:#f6f4ef;padding:48px 32px;border-radius:6px;display:flex;flex-direction:column;gap:12px;justify-content:center">
+      <strong style="font-family:'Noto Serif KR',serif;font-size:28px">신청이 접수되었습니다.</strong>
+      <span style="font-size:16px;line-height:1.7;opacity:.9">영업일 기준 2일 내에 진단 리포트와 함께 연락드리겠습니다.</span>
+    </div>
+  </sc-if>
+</section>
+
+</main>
+
+<footer style="background:#1d1c1a;color:#9a968d">
+  <div style="max-width:1200px;margin:0 auto;padding:48px 24px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:13px;line-height:1.8">
+    <div style="display:flex;flex-direction:column;gap:6px">
+      <span style="font-family:'Noto Serif KR',serif;font-size:20px;color:#f6f4ef;font-weight:700">온결 미디어</span>
+      <span>전문직 온라인 콘텐츠 컨설팅</span>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:4px">
+      <span>대표 · 000 | 사업자등록번호 · 000-00-00000</span>
+      <span>© 2026 Ongyeol Media. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;heroLayout&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;split&quot;,&quot;centered&quot;],&quot;default&quot;:&quot;split&quot;,&quot;tsType&quot;:&quot;'split'|'centered'&quot;,&quot;section&quot;:&quot;레이아웃&quot;},&quot;showPricing&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;레이아웃&quot;},&quot;ctaType&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;diagnosis&quot;,&quot;consult&quot;,&quot;kakao&quot;],&quot;default&quot;:&quot;diagnosis&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;전환&quot;}}">
+class Component extends DCLogic {
+  state = { field: 0, faq: 0, formField: null, submitted: false };
+  fields = [
+    { name: '병원·의원', headline: '진료실 밖에서 먼저 신뢰를 얻는 병원', desc: '환자는 내원 전 원장님의 설명 영상과 블로그 글을 먼저 봅니다. 의료광고 심의 기준을 지키면서 증상·치료 과정을 쉽게 풀어냅니다.', pains: ['블로그 대행을 맡겼지만 문의로 이어지지 않는다', '의료법 위반이 걱정돼 콘텐츠를 못 올린다', '원장님 시간이 없어 촬영이 어렵다'], examples: ['“이 증상, 병원 가야 할까요?” 시리즈', '진료 과목별 Q&A 쇼츠', '지역+증상 키워드 블로그 정보글'] },
+    { name: '치과', headline: '비교 검색하는 환자에게 선택받는 치과', desc: '임플란트·교정처럼 고관여 진료일수록 환자는 여러 곳을 비교합니다. 과정과 원칙을 투명하게 보여주는 콘텐츠로 차별화합니다.', pains: ['가격 경쟁 외에 보여줄 것이 없다', '후기성 콘텐츠의 심의 리스크', '상담 실장 역할을 콘텐츠가 대신했으면'], examples: ['진료 과정 단계별 설명 영상', '자주 받는 상담 질문 블로그', '원장 진료 철학 인터뷰'] },
+    { name: '변호사·법무법인', headline: '검색하는 순간 떠오르는 변호사', desc: '법률 문제는 급하게 검색합니다. 사건 유형별 핵심 정보를 정확하게 전달하고, 변호사 광고 규정 안에서 전문성을 드러냅니다.', pains: ['플랫폼 광고비만 늘고 수임은 그대로', '전문 분야가 검색에 드러나지 않는다', '어려운 법률 용어를 풀어내기 힘들다'], examples: ['사건 유형별 “지금 해야 할 일” 영상', '판례 해설 블로그 칼럼', '1분 법률 상식 쇼츠'] },
+    { name: '세무·회계', headline: '시즌마다 다시 찾게 되는 세무사', desc: '종소세·부가세·상속 등 시즌성 이슈에 맞춰 콘텐츠 캘린더를 운영하고, 고객이 매년 다시 찾는 채널을 만듭니다.', pains: ['신고 시즌에만 반짝 문의가 온다', '정보성 글이 너무 딱딱하다', '개인사업자 고객층 확장이 필요하다'], examples: ['신고 시즌 체크리스트 영상', '업종별 절세 블로그 시리즈', '사장님 대상 세무 Q&A 라이브'] },
+    { name: '뷰티·피부과', headline: '보고 싶어지는 콘텐츠, 예약하고 싶은 공간', desc: '시각적 결과보다 원리와 관리 과정을 설득력 있게 보여주는 숏폼·블로그로 꾸준한 예약 흐름을 만듭니다.', pains: ['인스타 위주라 검색 유입이 약하다', '시술 설명 콘텐츠의 표현 수위 고민', '트렌드 따라가기에 지쳤다'], examples: ['시술 원리 설명 쇼츠', '피부 타입별 관리 블로그', '원장 추천 루틴 시리즈'] }
+  ];
+  faqData = [
+    { q: '의료·법률 광고 심의 문제는 어떻게 관리하나요?', a: '의료법과 변호사 광고 규정 기준의 내부 체크리스트로 모든 원고를 검수하며, 필요 시 심의 신청 절차도 함께 안내해 드립니다.' },
+    { q: '원장님(변호사님)이 직접 출연해야 하나요?', a: '출연이 가장 효과적이지만 필수는 아닙니다. 월 1회 2시간 내외 촬영으로 한 달 분량을 확보하는 방식을 권장하며, 비출연형 블로그·자막 영상도 가능합니다.' },
+    { q: '효과는 언제부터 나타나나요?', a: '블로그 검색 유입은 보통 2~3개월, 유튜브는 3~6개월 이후 본격적인 흐름이 생깁니다. 매월 리포트로 유입·문의 변화를 공유합니다.' },
+    { q: '기존에 운영 중인 채널도 맡길 수 있나요?', a: '네. 기존 채널 진단 후 살릴 콘텐츠와 정리할 콘텐츠를 구분해 리뉴얼 방향을 제안드립니다.' },
+    { q: '계약 기간은 어떻게 되나요?', a: '기본 3개월 단위이며, 첫 달은 기획·세팅 기간으로 진행됩니다.' }
+  ];
+  renderVals() {
+    const s = this.state, p = this.props;
+    const hero = p.heroLayout ?? 'split';
+    const cta = p.ctaType ?? 'diagnosis';
+    const ctaLabel = { diagnosis: '무료 채널 진단 받기', consult: '무료 상담 신청', kakao: '카카오톡 상담' }[cta];
+    const tab = on => `padding:12px 20px;border-radius:999px;font-size:15px;cursor:pointer;font-weight:600;border:1px solid ${on ? '#f6f4ef' : '#3a3833'};background:${on ? '#f6f4ef' : 'transparent'};color:${on ? '#1d1c1a' : '#c9c5bc'}`;
+    const chip = on => `padding:10px 14px;border-radius:999px;font-size:14px;cursor:pointer;font-weight:500;border:1px solid ${on ? '#2f5a4a' : '#d6d0c4'};background:${on ? '#2f5a4a' : '#faf9f6'};color:${on ? '#f6f4ef' : '#4a4740'}`;
+    const toObj = str => Object.fromEntries(str.split(';').filter(Boolean).map(r => { const i = r.indexOf(':'); return [r.slice(0, i).trim().replace(/-([a-z])/g, (_, c) => c.toUpperCase()), r.slice(i + 1).trim()]; }));
+    const plans = [
+      { name: 'Starter', for: '블로그부터 탄탄하게 시작하고 싶은 곳', price: '월 000만원~', items: ['네이버 블로그 월 8회 발행', '키워드·검색 현황 분석', '심의 검수', '월간 리포트'], hl: false },
+      { name: 'Growth', for: '유튜브와 블로그를 함께 키우는 곳', price: '월 000만원~', items: ['블로그 월 8회 + 유튜브 월 2편', '쇼츠 월 4편', '월 1회 출장 촬영', '채널 브랜딩·썸네일'], hl: true },
+      { name: 'Signature', for: '지역 대표 채널을 목표로 하는 곳', price: '별도 협의', items: ['전 채널 통합 운영', '유튜브 월 4편 + 쇼츠 8편', '전담 PD 배정', '분기별 전략 미팅'], hl: false }
+    ];
+    return {
+      isSplit: hero === 'split', isCentered: hero === 'centered',
+      showPricing: p.showPricing ?? true,
+      ctaLabel,
+      fieldTabs: this.fields.map((f, i) => ({ name: f.name, style: toObj(tab(i === s.field)), select: () => this.setState({ field: i }) })),
+      field: this.fields[s.field],
+      services: [
+        { no: 'S—01', title: '유튜브 채널 기획·운영', desc: '채널 콘셉트, 기획안, 촬영, 편집, 썸네일, 업로드까지 전 과정을 운영합니다.' },
+        { no: 'S—02', title: '네이버 블로그 운영', desc: '검색 의도 기반 키워드 설계와 전문성이 드러나는 정보형 원고를 발행합니다.' },
+        { no: 'S—03', title: '숏폼 콘텐츠', desc: '쇼츠·릴스로 짧고 정확하게, 롱폼과 블로그로 유입을 연결합니다.' },
+        { no: 'S—04', title: '심의 대응·성과 리포트', desc: '광고 규정 검수와 함께 유입·문의 데이터를 매월 정리해 드립니다.' }
+      ],
+      steps: [
+        { no: '01', title: '무료 진단', desc: '현재 채널과 업종·지역 검색 환경을 분석합니다.' },
+        { no: '02', title: '전략 제안', desc: '타깃 고객과 핵심 키워드, 채널 구성을 설계합니다.' },
+        { no: '03', title: '월 1회 촬영', desc: '한 번의 촬영으로 한 달 분량 콘텐츠를 확보합니다.' },
+        { no: '04', title: '제작·발행', desc: '편집, 원고, 심의 검수 후 일정에 맞춰 발행합니다.' },
+        { no: '05', title: '리포트·개선', desc: '데이터를 기반으로 다음 달 기획을 개선합니다.' }
+      ],
+      works: [
+        { slot: '채널 썸네일 / 화면 캡처', tag: '병원 · 유튜브', title: 'OO의원 건강 정보 채널', result: '운영 0개월 · 구독자 0,000명' },
+        { slot: '블로그 화면 캡처', tag: '법률 · 블로그', title: 'OO법률사무소 사건 해설 블로그', result: '월 방문 0만 · 상담 문의 0배' },
+        { slot: '쇼츠 화면 캡처', tag: '세무 · 숏폼', title: 'OO세무회계 1분 절세 쇼츠', result: '누적 조회 00만' }
+      ],
+      plans: plans.map(pl => ({ ...pl, style: toObj(`display:flex;flex-direction:column;gap:24px;padding:32px;border-radius:6px;border:1px solid ${pl.hl ? '#2f5a4a' : '#d6d0c4'};background:${pl.hl ? '#2f5a4a' : '#fff'};color:${pl.hl ? '#f6f4ef' : '#1d1c1a'}`) })),
+      faqs: this.faqData.map((f, i) => ({ ...f, open: s.faq === i, icon: s.faq === i ? '−' : '+', toggle: () => this.setState({ faq: s.faq === i ? null : i }) })),
+      formFields: ['병원·의원', '치과', '한의원', '법률', '세무·회계', '기타'].map((n, i) => ({ name: n, style: toObj(chip(s.formField === i)), select: () => this.setState({ formField: i }) })),
+      submitted: s.submitted, notSubmitted: !s.submitted,
+      submit: e => { e.preventDefault(); this.setState({ submitted: true }); }
+    };
+  }
+}
+</script>
+</body>
+</html>
